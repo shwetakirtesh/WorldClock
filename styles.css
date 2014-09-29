@@ -1,0 +1,233 @@
+* {
+  font-family: "HelveticaNeue-Light", Arial;
+  margin: 0px;
+  padding: 0px;
+}
+#page-WorldClock, #page-Timer, #page-StopWatch {
+  display: none;
+}
+#page-WorldClock.show, #page-Timer.show, #page-StopWatch.show {
+  display: block;
+}
+
+input,
+button {
+  outline: none;
+}
+
+header {
+  z-index: 2;
+  top: 0px;
+  width: 100%;
+  background-color: #efefef;
+  height: 64px;
+  position: fixed;
+  border-bottom: 1px solid #ccc;
+}
+header h1 {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 18px;
+}
+
+footer {
+  z-index: 2;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 44px;
+  border-top: 1px solid #ccc;
+  background: #efefef;
+}
+footer ul {
+  margin-top: 7px;
+}
+footer ul li {
+  display: inline;
+  float: left;
+  width: 33%;
+  text-align: center;
+}
+footer ul li a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 12px;
+}
+footer ul li a.selected {
+  color: red;
+}
+footer ul li a span {
+  font-size: 25px;
+  line-height: 0px;
+}
+
+ul.world-clock-list {
+  margin-top: 64px;
+  width: 100%;
+  height: auto;
+  padding-left: 0px;
+  list-style: none;
+  z-index: 1;
+}
+ul.world-clock-list li {
+  position: relative;
+  height: 70px;
+  border-bottom: 1px solid #ccc;
+}
+ul.world-clock-list li p {
+  position: absolute;
+}
+ul.world-clock-list li p.city {
+  font-size: 20px;
+  left: 10px;
+  top: 10px;
+}
+ul.world-clock-list li p.time {
+  font-size: 25px;
+  right: 10px;
+  top: 10px;
+}
+ul.world-clock-list li p.time-details {
+  font-size: 12px;
+  left: 10px;
+  top: 40px;
+}
+.buttons {
+  position: relative;
+  width: 100%;
+  height: 120px;
+}
+.buttons button {
+  top: 20px;
+  position: absolute;
+  border-width: 1px;
+  border-style: solid;
+  height: 80px;
+  width: 80px;
+  border-radius: 40px;
+  background-color: white;
+  font-size: 15px;
+}
+.buttons button:first-child {
+  left: 33%;
+  margin-left: -40px;
+}
+.buttons button:last-child {
+  left: 66%;
+  margin-left: -40px;
+}
+.buttons button.button-stop,
+.buttons button.button-cancel {
+  border-color: red;
+  color: red;
+}
+.buttons button.button-start {
+  border-color: green;
+  color: green;
+}
+.buttons button.button-pause,
+.buttons button.button-lap {
+  border-color: black;
+}
+.buttons button.disabled {
+  border-color: gray;
+  color: gray;
+}
+div.counter {
+  height: 160px;
+  background: white;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+}
+div.counter p {
+  position: absolute;
+}
+div.counter p.lap-time {
+  color: #ccc;
+  font-size: 18px;
+  right: 10px;
+  top: 10px;
+}
+div.counter p.total-time {
+  font-family: "HelveticaNeue-UltraLight", Arial;
+  font-size: 70px;
+  top: 45px;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+}
+div.stopwatch-content {
+  top: 64px;
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  padding-left: 0px;
+  list-style: none;
+  z-index: 1;
+  background-color: #efefef;
+  overflow: hidden;
+}
+div.stopwatch-content ul.laps {
+	height: 275px;
+  border-top: 1px solid #ccc;
+  position: relative;
+  overflow-y: scroll;
+}
+div.stopwatch-content ul.laps li {
+  position: relative;
+  height: 40px;
+  border-bottom: 1px solid #ccc;
+}
+div.stopwatch-content ul.laps li p {
+  position: absolute;
+}
+div.stopwatch-content ul.laps li p.lap-label {
+  font-size: 18px;
+  color: #555;
+  left: 10px;
+  top: 10px;
+}
+div.stopwatch-content ul.laps li p.lap-time {
+  font-size: 22px;
+  right: 20%;
+  top: 10px;
+}
+div.timer-content {
+  top: 30px;
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  padding-left: 0px;
+  list-style: none;
+  z-index: 1;
+  background-color: #efefef;
+  overflow: hidden;
+}
+div.timer-content div.inputs {
+  postion: relative;
+  height: 160px;
+  border-bottom: 1px solid #ccc;
+}
+div.timer-content div.inputs input {
+  height: 160px;
+  background: white;
+  position: relative;
+  width: 50%;
+  float: left;
+  border: 0px;
+  font-size: 90px;
+  text-align: center;
+}
+.total-time{
+  	
+  height: 120px;
+  background: white;
+  position: relative;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  border: 0px;
+  font-size: 90px;
+  text-align: center;
+  
+
+}

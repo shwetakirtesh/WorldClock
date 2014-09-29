@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>
+    Clock
+  </title>
+  <meta charset="utf-8">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+  <link rel="stylesheet" type="text/css" href="styles.css"/>
+  <script src="clock.js"></script>
+  <div id="page-WorldClock" class="page show">
+   <header>
+     <h1>World Clock</h1>
+   </header>
+   <div><ul id="worldCitiesList" class="world-clock-list"></ul></div>
+ </div>
+ 
+ <div id="page-Timer" class="page">
+   <header>
+     <h1>Timer</h1>
+   </header>	
+   <div id="timer">
+     <header>
+       <h1>Timer</h1>
+     </header>
+     <div id="timeContent" class="timer-content">
+       <div class="timer-content">
+         <div class="counter" style="display: none;">
+           <p class="total-time">00:00.00</p>
+         </div>
+         
+         <div id="initial" class="inputs">
+          <input id="hoursInput" class="hours" type="number" name="hours" max="100" min="0" value="0"/>
+          <input id="minutesInput" class="minutes" type="number" name="minutes" max="59" min="0" value="14"/>
+        </div>	
+        
+        <div class="buttons">
+         <button id="startButton" class="button-start left-button">Start</button>
+         <button id="PauseButton" disabled = "true" class="button-pause right-button">Pause</button>
+       </div></div></div></div></div>
+       
+       <div id="page-StopWatch" class="page"> 
+        <header>
+          <h1>Stop Watch</h1>
+        </header>
+        <div class="stopwatch-content">
+          <div class="counter">
+            <p id="lapStopWatchID" class="lap-time">00:43.12</p>
+            <p id="stopwatchID" class="total-time">07:27.23</p>
+          </div>
+          <div class="buttons">
+            <button id="start-lap" class="button-start left-button" onclick="start();">Start</button>
+            <button id="record-lap" disabled="true" class="button-lap right-button">Lap</button>
+          </div> 
+          <ul id="ulLaps" class="laps"></ul></div></div>  
+          <footer>
+            <ul>
+              <li><a id="selectWC" class="world-clock-link selected" href="#World Clock"><span>✈</span><br/> 
+                World Clock</a></li>
+                <li><a id="selectTM" class="timer-link" href="#Timer"><span>◴</span><br/>Timer</a></li>
+                <li><a id="selectSW" class="stopwatch-link" href="#StopWatch"> <span>◷</span><br/>Stopwatch</a></li>
+              </ul>
+            </footer>
+            
+            <!-------Script for Navigation between Tabs------------------------------------>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <script>
+            $(window).on('hashchange', function(e) {
+              var hash = window.location.hash;
+              
+              $('.page').removeClass('show');
+              
+              if (hash == "#World Clock") {
+                $('#page-WorldClock').addClass('show');
+                $('#selectWC').removeClass('world-clock-link').addClass('world-clock-link selected');
+                $('#selectTM').removeClass('timer-link selected').addClass('timer-link'); 
+                $('#selectSW').removeClass('stopwatch-link selected').addClass('stopwatch-link');
+              }
+              if (hash == "#Timer") {
+                $('#page-Timer').addClass('show');
+                $('#selectTM').removeClass('timer-link').addClass('timer-link selected');
+                $('#selectWC').removeClass('world-clock-link selected').addClass('world-clock-link');
+                $('#selectSW').removeClass('stopwatch-link selected').addClass('stopwatch-link');
+              }
+              if (hash == "#StopWatch") {
+                $('#page-StopWatch').addClass('show');
+                $('#selectSW').removeClass('stopwatch-link').addClass('stopwatch-link selected');
+                $('#selectWC').removeClass('world-clock-link selected').addClass('world-clock-link');
+                $('#selectTM').removeClass('timer-link selected').addClass('timer-link');
+              }
+            });
+</script>
+</body>
+</html>
